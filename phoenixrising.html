@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Rising | Legendary Gaming Hub</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #4A0E0E;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .cosmic-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cosmic-header {
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .cosmic-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #FF4500, #FFD700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .cosmic-intro {
+            padding: 60px 0;
+            text-align: center;
+            background: radial-gradient(circle at center, #8B0000 0%, #4A0E0E 70%);
+        }
+        
+        .cosmic-intro h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .cosmic-intro p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .cosmic-portal {
+            display: inline-block;
+            background-color: #FF4500;
+            color: white;
+            padding: 16px 32px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 69, 0, 0.4);
+        }
+        
+        .cosmic-portal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 69, 0, 0.6);
+        }
+        
+        .cosmic-benefits {
+            padding: 80px 0;
+        }
+        
+        .cosmic-benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+        
+        .benefits-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .benefit-node {
+            background-color: #8B0000;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-node:hover {
+            transform: translateY(-10px);
+        }
+        
+        .node-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-node h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #FF4500;
+        }
+        
+        .benefit-node p {
+            opacity: 0.8;
+        }
+        
+        .cosmic-society {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(rgba(74, 14, 14, 0.8), rgba(74, 14, 14, 0.9)), url('https://placehold.co/1200x800/8B0000/8B0000') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .cosmic-society h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cosmic-society p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .cosmic-metrics {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .metric-star {
+            text-align: center;
+        }
+        
+        .star-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #FF4500;
+        }
+        
+        .star-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .cosmic-footer {
+            padding: 40px 0;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .cosmic-intro h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cosmic-intro p, .cosmic-society p {
+                font-size: 1rem;
+            }
+            
+            .benefits-matrix {
+                grid-template-columns: 1fr;
+            }
+            
+            .cosmic-metrics {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="cosmic-header">
+        <div class="cosmic-container">
+            <div class="cosmic-title">Phoenix Rising</div>
+        </div>
+    </header>
+    
+    <section class="cosmic-intro">
+        <div class="cosmic-container">
+            <h1>Junte-se à comunidade<br>Phoenix Rising no Discord</h1>
+            <p>Conecte-se com outros entusiastas, participe de eventos exclusivos e tenha acesso a conteúdos especiais. Nossa comunidade está crescendo a cada dia!</p>
+            <a href="https://discord.com/invite/PzVeqjERNw" class="cosmic-portal">Entrar no Discord</a>
+        </div>
+    </section>
+    
+    <section class="cosmic-benefits">
+        <div class="cosmic-container">
+            <h2>O que você vai encontrar</h2>
+            <div class="benefits-matrix">
+                <div class="benefit-node">
+                    <div class="node-icon">🌠</div>
+                    <h3>Eventos Estelares</h3>
+                    <p>Participe de torneios, desafios e eventos especiais organizados regularmente para nossa comunidade.</p>
+                </div>
+                <div class="benefit-node">
+                    <div class="node-icon">🛰️</div>
+                    <h3>Conexões Cósmicas</h3>
+                    <p>Conheça pessoas com os mesmos interesses e expanda sua rede de contatos e amizades.</p>
+                </div>
+                <div class="benefit-node">
+                    <div class="node-icon">🔭</div>
+                    <h3>Exploração Guiada</h3>
+                    <p>Navegue por diversos canais organizados por temas, encontrando facilmente o conteúdo que te interessa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cosmic-society">
+        <div class="cosmic-container">
+            <h2>Faça parte desta comunidade</h2>
+            <p>Junte-se a milhares de membros que já fazem parte da Phoenix Rising. Uma comunidade em constante crescimento, com pessoas de todo o Brasil.</p>
+            
+            <div class="cosmic-metrics">
+                <div class="metric-star">
+                    <div class="star-value">10k+</div>
+                    <div class="star-label">Membros</div>
+                </div>
+                <div class="metric-star">
+                    <div class="star-value">50+</div>
+                    <div class="star-label">Canais</div>
+                </div>
+                <div class="metric-star">
+                    <div class="star-value">24/7</div>
+                    <div class="star-label">Ativo</div>
+                </div>
+            </div>
+            
+            <a href="https://discord.com/invite/PzVeqjERNw" class="cosmic-portal">Entrar no Discord</a>
+        </div>
+    </section>
+    
+    <footer class="cosmic-footer">
+        <div class="cosmic-container">
+            <p>&copy; 2023 Phoenix Rising. Todos os direitos reservados.</p>
+            <div style="margin-top: 20px;">
+                <a href="phoenixrising-terms.html" style="color: #FF4500; text-decoration: none; margin-right: 20px;">Terms of Use</a>
+                <a href="phoenixrising-privacy.html" style="color: #FF4500; text-decoration: none;">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
