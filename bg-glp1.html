@@ -3118,34 +3118,14 @@
 
 
 		<div id="counterContainer">
-			<div id="counterWrapper">
-				<img src="images/159604.png" class="live-icon" alt="Live Viewers">
-				<span id="viewsCount">71,713</span>
-				<span style="color: black;">people watching now</span>
-			</div>
+			
 			<div id="importantMessage">
 				🚨 IMPORTANT HEALTH UPDATE 🚨
 				<br>
 				<span class="loading">May take 10 seconds to load... Make sure your sound is on. 🔊</span>
 			</div>
 		</div>
-		<script>
-			function getRandomInt(min, max) {
-				return Math.floor(Math.random() * (max - min + 1) + min);
-			}
-			function updateCounter() {
-				var currentCount = parseInt(document.getElementById('viewsCount').textContent.replace(/,/g, ''), 10);
-				var increment = getRandomInt(1, 5);
-				// Pequenos incrementos para parecer realista
-				var nextCount = currentCount + increment;
-				document.getElementById('viewsCount').textContent = nextCount.toLocaleString('en-US');
-				var nextDelay = getRandomInt(1500, 3000);
-				// Intervalo maior para manter exclusividade
-				setTimeout(updateCounter, nextDelay);
-			}
-			document.getElementById('viewsCount').textContent = '71,712';
-			updateCounter();
-		</script>
+		
 
 	</div>
 	<div id="iawsru" class="video-cta-container oculto">

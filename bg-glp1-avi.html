@@ -3118,34 +3118,14 @@
 
 
 		<div id="counterContainer">
-			<div id="counterWrapper">
-				<img src="images/159604.png" class="live-icon" alt="Live Viewers">
-				<span id="viewsCount">71,713</span>
-				<span style="color: black;">people watching now</span>
-			</div>
+			
 			<div id="importantMessage">
 				🚨 IMPORTANT HEALTH UPDATE 🚨
 				<br>
 				<span class="loading">May take 10 seconds to load... Make sure your sound is on. 🔊</span>
 			</div>
 		</div>
-		<script>
-			function getRandomInt(min, max) {
-				return Math.floor(Math.random() * (max - min + 1) + min);
-			}
-			function updateCounter() {
-				var currentCount = parseInt(document.getElementById('viewsCount').textContent.replace(/,/g, ''), 10);
-				var increment = getRandomInt(1, 5);
-				// Pequenos incrementos para parecer realista
-				var nextCount = currentCount + increment;
-				document.getElementById('viewsCount').textContent = nextCount.toLocaleString('en-US');
-				var nextDelay = getRandomInt(1500, 3000);
-				// Intervalo maior para manter exclusividade
-				setTimeout(updateCounter, nextDelay);
-			}
-			document.getElementById('viewsCount').textContent = '71,712';
-			updateCounter();
-		</script>
+		
 
 	</div>
 	<div id="iawsru" class="video-cta-container oculto">
@@ -3712,7 +3692,7 @@
         
         // Lista de VSLs com seus respectivos tempos de pith
         var vslPithTimes = {
-            '68c49c5502d156008ff0bce4': 2228
+            'ab-68c49ddc35fa1399fdabc59a': 2228
         };
         
         console.log('[VSL Monitor] VSLs configuradas:', vslPithTimes);
@@ -4189,7 +4169,42 @@
 	<!--  VSLPageView  -->
     <script>document.addEventListener("DOMContentLoaded",()=>{function e(e){const t=`; ${document.cookie}`;const n=t.split(`; ${e}=`);return n.length===2?n.pop().split(";").shift():null}function c(e){const t=new Image;t.src=`https://go.${location.hostname}/cf/cv?click_id=${e}&ct=vsl_pageview`;t.style.display="none";document.body.appendChild(t)}const t=new URLSearchParams(location.search).get("clickid");if(t){c(t)}else{let t=0;function n(){const o=e("cf_click_id");if(o){c(o)}else if(t<19){t++;setTimeout(n,200)}}n()}})</script>
     <!--  PlayVSL  -->
-    <script>document.addEventListener("DOMContentLoaded",()=>{function e(e){const t=`; ${document.cookie}`;const i=t.split(`; ${e}=`);return i.length===2?i.pop().split(";").shift():null}function t(e){const t=`https://go.${location.hostname}/cf/cv?click_id=${e}&ct=play_vsl`;let i=!1;(function o(){if(typeof smartplayer==="undefined"||!(smartplayer.instances&&smartplayer.instances.length))return setTimeout(o,1000);smartplayer.instances[0].on("timeupdate",()=>{if(i||smartplayer.instances[0].smartAutoPlay)return;if(smartplayer.instances[0].video.currentTime>=1){i=!0;const e=new Image();e.src=t}})})()}const i=new URLSearchParams(location.search).get("clickid");if(i){t(i)}else{let i=0;function o(){const n=e("cf_click_id");if(n){t(n)}else if(i<19){i++;setTimeout(o,200)}}o()}})</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  function getClickId() {
+    const fromUrl = new URLSearchParams(location.search).get("clickid");
+    if (fromUrl) return fromUrl;
+    const cookieMatch = document.cookie.match(/(?:^|; )cf_click_id=([^;]+)/);
+    return cookieMatch ? cookieMatch[1] : null;
+  }
+
+  function trackPlay(clickId) {
+    if (!clickId) return;
+    const img = new Image();
+    img.src = `https://go.${location.hostname}/cf/cv?click_id=${clickId}&ct=play_vsl`;
+    img.style.display = "none";
+    document.body.appendChild(img);
+  }
+
+  let fired = false;
+  function attachPlayListener(clickId) {
+    if (typeof smartplayer === "undefined" || !(smartplayer.instances && smartplayer.instances.length)) {
+      return setTimeout(() => attachPlayListener(clickId), 500);
+    }
+
+    const player = smartplayer.instances[0];
+    player.on("play", () => {
+      if (!fired) {
+        fired = true;
+        trackPlay(clickId);
+      }
+    });
+  }
+
+  const clickId = getClickId();
+  if (clickId) attachPlayListener(clickId);
+});
+</script>
     <!--  Verificador de ViuPith para disparar pitch_view  -->
     <script>document.addEventListener("DOMContentLoaded",function(){var a=!1;function b(a){var b="; "+document.cookie;var c=b.split("; "+a+"=");return c.length===2?c.pop().split(";").shift():null}function c(){if(a)return;a=!0;var c=new URLSearchParams(location.search).get("clickid");if(!c){c=b("cf_click_id")}if(c){var d=`https://go.${location.hostname}/cf/cv?click_id=${c}&ct=pitch_view`;var e=new Image;e.src=d;console.log("Pitch View disparado para click_id:",c)}else{console.log("Não foi possível encontrar um click_id válido")}}var d=function(){if(a)return;var d=b("ViuPith");if(d){console.log("Cookie ViuPith encontrado. Disparando pitch_view...");c();clearInterval(e)}};d();var e=setInterval(d,1000)});</script>
     <!--  Parametros URL  -->
