@@ -150,6 +150,27 @@ function hdBotDetected(source, data = '') { reportVisitor(source, {data:data});}
 });
 </script>
 
+<!--  Parametros URL  -->
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const p = new URLSearchParams(window.location.search);
+    if (p.toString() === '') return;
+    document.querySelectorAll('a[href^="http"], a[href^="/"], a[href^="./"], a[href^="../"]').forEach(l => {
+      try {
+        const url = l.href.startsWith('/') || l.href.startsWith('./') || l.href.startsWith('../')
+          ? new URL(window.location.origin + (l.href.startsWith('/') ? '' : '/') + l.getAttribute('href'))
+          : new URL(l.href);
+        p.forEach((value, key) => {
+          if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+        });
+        l.href = url.toString();
+      } catch (e) {
+        console.error(`Erro ao processar o link: ${l.href}`, e);
+      }
+    });
+  });
+  </script>
+
    
 
 
